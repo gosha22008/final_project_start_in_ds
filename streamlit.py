@@ -20,7 +20,7 @@ st.markdown('''
 
 # загрузка данных инфляции
 # file = st.file_uploader('загрузите данные инфляции', type='xlsx')
-file = 'data\inflation.xlsx'
+file = 'inflation.xlsx'
 
 if file:
     inf = pd.read_excel(file, header=None, index_col=0)
@@ -35,18 +35,18 @@ if file:
 
 # загрузка данных по экономическим деятельностям
 # econom = st.file_uploader('загрузите данные по экономическим деятельностям', type='xlsx')
-econom = 'data\\tab3-zpl_2023.xlsx'
+econom = 'tab3-zpl_2023.xlsx'
 
 if econom:
     # загрузка и обработка первого листа 
-    data1 = pd.read_excel('data\\tab3-zpl_2023.xlsx', sheet_name=0)
+    data1 = pd.read_excel(econom, sheet_name=0)
     data1.columns = ['types', '2017', '2018', '2019', '2020', '2021', '2022', '2023']
     data1 = data1.drop([0,1,2,3,57,58,59])
     for i in data1.index:
         data1['types'][i] = data1['types'][i].lower()
 
     # загрузка и обработка второго листа
-    data2 = pd.read_excel('data\\tab3-zpl_2023.xlsx', sheet_name=1)
+    data2 = pd.read_excel(econom, sheet_name=1)
     data2.columns = ['types'] + [str(i) for i in range(2000, 2017)]
     data2 = data2.drop([0,1,37,38])
     for i in data2.index:
