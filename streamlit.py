@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-import os
+from pathlib import Path
 
 # широкий режим отображения
 st.set_page_config(layout="wide")
@@ -11,8 +11,8 @@ st.set_page_config(layout="wide")
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # прописываем пути
-absolute_path_inf = os.path.join(os.getcwd(), 'data\inflation.xlsx')
-absolute_path_data = os.path.join(os.getcwd(), 'data\\tab3-zpl_2023.xlsx')
+absolute_path_inf = Path('data\inflation.xlsx')
+absolute_path_data = Path('data\\tab3-zpl_2023.xlsx')
 
 # Заголовок
 st.title('Hi! Это мой финальный проект по курсу Start in DS от магистратуры Искусственный Интеллект факультета компьтерных наук ВШЭ')
