@@ -11,8 +11,9 @@ st.set_page_config(layout="wide")
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # прописываем пути
-absolute_path_inf = Path('data\inflation.xlsx')
-absolute_path_data = Path('data\\tab3-zpl_2023.xlsx')
+data_folder = Path('data/')
+absolute_path_inf = data_folder / 'inflation.xlsx'
+absolute_path_data = data_folder / 'tab3-zpl_2023.xlsx'
 
 # Заголовок
 st.title('Hi! Это мой финальный проект по курсу Start in DS от магистратуры Искусственный Интеллект факультета компьтерных наук ВШЭ')
