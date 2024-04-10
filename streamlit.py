@@ -265,8 +265,8 @@ if econom:
     with st.sidebar:
         st.sidebar.title('Выбор экономической деятельности для рассмотрения')
         stroi = st.checkbox('Строительство', True)
-        rest = st.checkbox('Гостиницы и рестораны', False)
-        learning = st.checkbox('Образование', False)
+        rest = st.checkbox('Гостиницы и рестораны', True)
+        learning = st.checkbox('Образование', True)
 
     types = [stroi, rest, learning]
 
@@ -279,12 +279,9 @@ if econom:
     if rest == True and stroi == False and learning == False:
         main_fun(types)
 
-
-
     # образование
     if learning == True and rest == False and stroi == False:
         main_fun(types)
-
 
     # образование и строительство
     if learning == True and stroi == True and rest == False:
