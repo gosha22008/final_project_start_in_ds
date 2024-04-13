@@ -96,6 +96,7 @@ if econom:
     def draw_salary_growth(types):
         st.write('Посмотрим на график роста зарплат')
         plt.figure(figsize=[16,9])
+        plt.yticks(np.arange(0, 80000, step=5000))
         plt.grid()
         colors=['green', 'black', 'red']
         leg = []
@@ -127,6 +128,7 @@ if econom:
     def draw_salary_growth_with_inf(types):
         st.write('Посмотрим на сравнение графиков роста зарплат без и с учетом инфляции')
         plt.figure(figsize=[16,9])
+        plt.yticks(np.arange(0, 80000, step=5000))
         plt.grid()
         colors=['green', 'black', 'red']
         leg = []
@@ -152,7 +154,7 @@ if econom:
         st.write('Сравнение изменениий номинальных зарплат и реальных зарплат с учётом инфляции')
         plt.figure(figsize=[16,9])
         plt.grid()
-        plt.yticks(np.arange(-3000, 5500), step=500)
+        plt.yticks(np.arange(-3000, 10000, step=500))
         colors=['green', 'black', 'red']
         leg = []
         names = set()
@@ -201,7 +203,7 @@ if econom:
             st.write('Динамика изменений реальных зарплат с учётом инфляции')
             plt.figure(figsize=[16,9])
             plt.grid()
-            plt.yticks(np.arange(-3000, 5500), step=500)
+            plt.yticks(np.arange(-3000, 10000, step=500))
             colors=['green', 'black', 'red']
             leg = []
             for i, v in enumerate(types):
