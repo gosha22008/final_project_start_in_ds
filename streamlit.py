@@ -17,7 +17,7 @@ absolute_path_inf = data_folder / 'inflation.xlsx'
 absolute_path_data = data_folder / 'tab3-zpl_2023.xlsx'
 
 # Заголовок
-st.title('Hi! Это мой финальный проект по курсу Start in DS от магистратуры Искусственный Интеллект факультета компьтерных наук ВШЭ')
+st.title('Hi! Это мой финальный проект по курсу Start in DS от магистратуры Искусственный Интеллект факультета компьютерных наук ВШЭ')
 
 # подзаголовок - проект
 st.header('Проект: анализ зарплат в России')
@@ -149,7 +149,7 @@ if econom:
 
     # функция отрисовки изменения зарплат без и с учётом инфляции
     def draw_changes_with_inf_without(types):
-        st.write('График изменения зарплат без и с учётом инфляции')
+        st.write('Сравнение изменениий номинальных зарплат и реальных зарплат с учётом инфляции')
         plt.figure(figsize=[16,9])
         plt.grid()
         colors=['green', 'black', 'red']
@@ -163,7 +163,7 @@ if econom:
                 names.add(salaries.iloc[i].name)
                 leg.append(salary_changes_with_inflation.iloc[i].name + " с инфляцией")
                 leg.append(salary_growth.iloc[i].name + ' без инфляции')
-        plt.title(f'''Изменения зарплат с учётом инфляции по годам в сферах: 
+        plt.title(f'''Сравнение изменений зарплат с учётом инфляции и без по годам в сферах: 
                   {", ".join(names)}''')
         plt.xlabel('года')
         plt.ylabel('зарплата, рублей')
@@ -197,7 +197,7 @@ if econom:
 
     # функция отрисовки графика изменения зарплат с инфляцией
     def draw_salary_changes_with_inf(types):
-            st.write('Посмотрим на график изменения зарплат с учётом инфляции')
+            st.write('Динамика изменений реальных зарплат с учётом инфляции')
             plt.figure(figsize=[16,9])
             plt.grid()
             colors=['green', 'black', 'red']
@@ -250,7 +250,7 @@ if econom:
         draw_salary_growth_with_inf(types)
         st.write('Номинальное изменение зарплат')
         st.dataframe(print_out_df(salary_growth, types).style.format('{:.2f}'))
-        st.write('Динамика изменений зарплат с учетом инфляции')
+        st.write('Динамика изменений реальных зарплат с учетом инфляции')
         st.dataframe(print_out_df(salary_changes_with_inflation, types).style.format('{:.2f}'))
         draw_salary_changes_with_inf(types)
         # st.write('Сравнение изменений без и с инфляцией')
