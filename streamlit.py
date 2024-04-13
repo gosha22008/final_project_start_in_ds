@@ -152,6 +152,7 @@ if econom:
         st.write('Сравнение изменениий номинальных зарплат и реальных зарплат с учётом инфляции')
         plt.figure(figsize=[16,9])
         plt.grid()
+        plt.yticks(np.arange(-3000, 5500), step=500)
         colors=['green', 'black', 'red']
         leg = []
         names = set()
@@ -200,6 +201,7 @@ if econom:
             st.write('Динамика изменений реальных зарплат с учётом инфляции')
             plt.figure(figsize=[16,9])
             plt.grid()
+            plt.yticks(np.arange(-3000, 5500), step=500)
             colors=['green', 'black', 'red']
             leg = []
             for i, v in enumerate(types):
